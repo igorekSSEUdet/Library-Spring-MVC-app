@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All books</title>
+    <style>
+        body {
+            background-color: #87CEFA;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1, a {
+            color: #FFFFFF;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .book-item {
+            margin: 10px;
+        }
+
+        .book-link {
+            display: block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            color: #87CEFA;
+            text-align: center;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .book-link:hover {
+            background-color: #008B8B;
+            color: white;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .new-book-link {
+            display: block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            color: #87CEFA;
+            text-align: center;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .new-book-link:hover {
+            background-color: #008B8B;
+            color: white;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>All Books</h1>
+    <div class="book-list">
+        <div th:each="book : ${book}" class="book-item">
+            <a th:href="@{/book/{id}(id=${book.getId()})}" class="book-link" th:text="${book.getTitle()}"></a>
+        </div>
+    </div>
+    <a href="/book/new" class="new-book-link">New book</a>
+</div>
+</body>
+</html>

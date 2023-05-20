@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 2px 2px #008cba;
+        }
+
+        .details {
+            width: 80%;
+            margin: 0 auto;
+            padding: 3rem;
+            background-color: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .details p {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .details span {
+            font-weight: bold;
+            color: #008cba;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #008cba;
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1.5rem 4rem;
+            background-color: #008cba;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #00687f;
+        }
+    </style>
+</head>
+<body>
+<h1>Book Details</h1>
+<div class="details">
+    <p>Title: <span th:text="${book.getTitle()}"></span></p>
+    <p>Author: <span th:text="${book.getAuthor()}"></span></p>
+    <p>Year of Realize: <span th:text="${book.getYearOfRealize()}"></span></p>
+    <p>Is free: <span class="status" th:if="${book.isFree()}">Free</span>
+        <span class="status" th:unless="${book.isFree()}">Busy</span>
+    </p>
+    <form th:action="@{/book/{id}/edit(id=${book.getId()})}" th:method="get">
+        <input type="hidden" name="_method" value="get" />
+        <button class="btn" type="submit">Update book</button>
+    </form>
+    <form th:action="@{/book/{id}(id=${book.getId()})}" th:method="post">
+        <input type="hidden" name="_method" value="delete" />
+        <button class="btn" type="submit">Delete book</button>
+    </form>
+</div>
+</body>
+</html>

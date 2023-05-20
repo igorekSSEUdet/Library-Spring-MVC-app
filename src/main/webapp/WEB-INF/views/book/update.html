@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Book</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h4 class="mb-0">Update Book</h4>
+                </div>
+                <div class="card-body">
+                    <form th:method="PATCH" th:action="@{/book/{id}(id=${book.getId()})}" th:object="${book}">
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" th:field="*{title}" class="form-control" id="title">
+                            <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author:</label>
+                            <input type="text" th:field="*{author}" class="form-control" id="author">
+                            <div th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearOfRealize">Year of Release:</label>
+                            <input type="number" th:field="*{yearOfRealize}" class="form-control" id="yearOfRealize">
+                            <div th:if="${#fields.hasErrors('yearOfRealize')}" th:errors="*{yearOfRealize}" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

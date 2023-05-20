@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Update user</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f9f9f9;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        form {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0px 3px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"] {
+            display: block;
+            margin-bottom: 1em;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #555;
+            width: 100%;
+        }
+        input[type="submit"] {
+            background-color: #428bca;
+            color: white;
+            padding: 1em 2em;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background-color: #3071a9;
+        }
+        .error-msg {
+            color: red;
+            margin-top: 0.5em;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/user/{id}(id=${user.getId()})}" th:object="${user}">
+    <label for="name">Name </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="surname">Surname </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</div>
+    <br/>
+    <label for="yearOfBirth">Year </label>
+    <input type="number" th:field="*{yearOfBirth}" id="yearOfBirth"/>
+    <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Year of birth Error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>
