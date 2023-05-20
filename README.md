@@ -7,7 +7,7 @@
 - PostgreSQL.
 
 ## Системные требования
-- JDK 8 или выше;
+- JDK 11 или выше;
 - Apache Maven 3.6.3 или выше;
 - PostgreSQL 9.5 или выше.
 
