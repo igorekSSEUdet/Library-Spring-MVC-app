@@ -12,6 +12,14 @@
     <list default="true" id="f8fba1f2-412a-41e4-88ac-8d45bbb05e56" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyleidea-libs/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dda70591-9f2a-4a91-93c4-7c77a9a61a4b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dda70591-9f2a-4a91-93c4-7c77a9a61a4b/storage_v2/_src_/database/library.uyToCQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dda70591-9f2a-4a91-93c4-7c77a9a61a4b/storage_v2/_src_/database/library.uyToCQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dda70591-9f2a-4a91-93c4-7c77a9a61a4b/storage_v2/_src_/database/library.uyToCQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dda70591-9f2a-4a91-93c4-7c77a9a61a4b/storage_v2/_src_/database/library.uyToCQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -238,7 +246,7 @@
       <workItem from="1684420205891" duration="3387000" />
       <workItem from="1684424418532" duration="4846000" />
       <workItem from="1684471956356" duration="20974000" />
-      <workItem from="1684564934228" duration="8629000" />
+      <workItem from="1684564934228" duration="8992000" />
     </task>
     <servers />
   </component>
@@ -255,16 +263,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/igorek/springMVC/controllers/BookOrderController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
